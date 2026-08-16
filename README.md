@@ -1,20 +1,24 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Shriram R — Portfolio
 
-# Run and deploy your AI Studio app
+> AI Engineer • Software Developer • AI Researcher
 
-This contains everything you need to run your app locally.
+Personal portfolio website showcasing my **AI projects, software development work, research, technical skills, and achievements**.
 
-View your app in AI Studio: https://ai.studio/apps/87a7ee92-4bd0-4d26-a706-85345336d2e0
+### 🔗 Portfolio
 
-## Run Locally
+[Visit my Portfolio](YOUR_PORTFOLIO_URL)
 
-**Prerequisites:**  Node.js
+### 🛠️ Built With
 
+* React
+* TypeScript
+* Tailwind CSS
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 👨‍💻 Connect
+
+* [GitHub](https://github.com/UniversalCodeBin)
+* [LinkedIn](https://linkedin.com/in/shriram2008)
+
+---
+
+**Built with curiosity, code, and a passion for AI.**
