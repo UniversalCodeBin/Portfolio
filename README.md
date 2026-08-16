@@ -6,7 +6,7 @@ Personal portfolio website showcasing my **AI projects, software development wor
 
 ### 🔗 Portfolio
 
-[Visit my Portfolio](YOUR_PORTFOLIO_URL)
+[Visit my Portfolio](https://portfolio-lemon-omega-3ap3s53exf.vercel.app)
 
 ### 🛠️ Built With
 
