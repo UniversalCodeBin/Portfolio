@@ -15,7 +15,7 @@ export function Projects() {
             Engineering Projects
           </h2>
           <p className="text-gray-400 text-base max-w-2xl mt-2">
-            Architected and developed with an emphasis on system modularity, voice interactions, semantic retrieval, and containerized microservices.
+            The problems I have worked on, how each system approaches them, and what it does today.
           </p>
         </div>
 

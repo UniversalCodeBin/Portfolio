@@ -45,9 +45,9 @@ export function Hero({ onOpenResume }: HeroProps) {
             id="hero-role-headline"
             className="text-xl sm:text-2xl lg:text-3xl font-black text-white leading-tight tracking-tight mb-4"
           >
-            Architecting the{' '}
+            Building AI that makes{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-500">
-              Future of AI.
+              trustworthy decisions.
             </span>
           </div>
 
@@ -56,7 +56,7 @@ export function Hero({ onOpenResume }: HeroProps) {
             id="hero-description"
             className="text-base sm:text-lg text-gray-400 max-w-2xl leading-relaxed mb-8 font-normal"
           >
-            Artificial Intelligence student who builds AI systems, software applications, and research-oriented projects. Specialized in LLM workflows, distributed systems, and NLP.
+            AI & Data Science undergraduate who builds systems that turn predictions into safe, auditable decisions — combining machine learning, optimization and backend engineering. Open to AI/ML and Python backend internships.
           </p>
 
           {/* CTA Buttons */}
@@ -147,7 +147,7 @@ export function Hero({ onOpenResume }: HeroProps) {
                   <span className="text-white font-medium">cat focus.txt</span>
                 </div>
                 <div className="text-gray-400 pl-4 text-xs sm:text-sm">
-                  llm agents · nlp · backend services
+                  applied ml · optimization · agent tooling · backend
                 </div>
               </div>
 
@@ -158,7 +158,7 @@ export function Hero({ onOpenResume }: HeroProps) {
                   <span className="text-white font-medium">stack --list</span>
                 </div>
                 <div className="text-gray-400 pl-4 text-xs sm:text-sm">
-                  python · fastapi · docker · vector dbs
+                  python · scikit-learn · or-tools · fastapi · postgresql
                 </div>
               </div>
 
@@ -176,7 +176,7 @@ export function Hero({ onOpenResume }: HeroProps) {
                   CGPA
                 </span>
                 <span className="text-xl sm:text-2xl font-bold text-white font-mono tracking-tight">
-                  8.856
+                  8.667
                 </span>
               </div>
               <div className="pl-4 sm:pl-6 pr-2">
@@ -192,7 +192,7 @@ export function Hero({ onOpenResume }: HeroProps) {
                   PROJECTS
                 </span>
                 <span className="text-xl sm:text-2xl font-bold text-white font-mono tracking-tight">
-                  03
+                  04
                 </span>
               </div>
             </div>

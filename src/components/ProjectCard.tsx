@@ -89,68 +89,25 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 <span className="text-[11px] text-gray-500">Modular Design</span>
               </div>
 
-              {project.architectureType === 'assistant' && (
-                <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-center">
-                  <div className="p-2.5 rounded bg-white/5 border border-white/5">
-                    <div className="text-[10px] text-gray-400">INPUT LAYER</div>
-                    <div className="text-white font-bold mt-1">Voice / Query</div>
-                    <div className="text-[10px] text-blue-400 mt-1">Audio Synthesis</div>
-                  </div>
-                  <div className="p-2.5 rounded bg-white/5 border border-white/5">
-                    <div className="text-[10px] text-gray-400">AGENT CORE</div>
-                    <div className="text-indigo-300 font-bold mt-1">Task Orchestrator</div>
-                    <div className="text-[10px] text-gray-400 mt-1">LLM Workflows</div>
-                  </div>
-                  <div className="p-2.5 rounded bg-white/5 border border-white/5">
-                    <div className="text-[10px] text-gray-400">MEMORY RETRIEVAL</div>
-                    <div className="text-purple-300 font-bold mt-1">Vector Database</div>
-                    <div className="text-[10px] text-green-400 mt-1">Semantic Search</div>
-                  </div>
-                  <div className="p-2.5 rounded bg-white/5 border border-white/5">
-                    <div className="text-[10px] text-gray-400">API SERVING</div>
-                    <div className="text-green-300 font-bold mt-1">FastAPI REST</div>
-                    <div className="text-[10px] text-gray-400 mt-1">Reliable Execution</div>
-                  </div>
-                </div>
-              )}
-
-              {project.architectureType === 'chatbot' && (
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-center">
-                  <div className="p-2.5 rounded bg-white/5 border border-white/5">
-                    <div className="text-[10px] text-gray-400">STAGE 1: INGEST</div>
-                    <div className="text-white font-bold mt-1">Text Processing</div>
-                    <div className="text-[10px] text-blue-400 mt-1">Tokenization & Clean</div>
-                  </div>
-                  <div className="p-2.5 rounded bg-white/5 border border-white/5">
-                    <div className="text-[10px] text-gray-400">STAGE 2: MEMORY</div>
-                    <div className="text-indigo-300 font-bold mt-1">Multi-Turn State</div>
-                    <div className="text-[10px] text-indigo-400 mt-1">Context Preservation</div>
-                  </div>
-                  <div className="p-2.5 rounded bg-white/5 border border-white/5">
-                    <div className="text-[10px] text-gray-400">STAGE 3: DISPATCH</div>
-                    <div className="text-green-300 font-bold mt-1">Conversational Logic</div>
-                    <div className="text-[10px] text-green-400 mt-1">Optimized Response</div>
-                  </div>
-                </div>
-              )}
-
-              {project.architectureType === 'url_shortener' && (
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-center">
-                  <div className="p-2.5 rounded bg-white/5 border border-white/5">
-                    <div className="text-[10px] text-gray-400">CLIENT INGRESS</div>
-                    <div className="text-white font-bold mt-1">FastAPI Endpoint</div>
-                    <div className="text-[10px] text-blue-400 mt-1">POST /api/shorten</div>
-                  </div>
-                  <div className="p-2.5 rounded bg-white/5 border border-white/5">
-                    <div className="text-[10px] text-gray-400">STORAGE & RETRIEVAL</div>
-                    <div className="text-purple-300 font-bold mt-1">Hash Encoding</div>
-                    <div className="text-[10px] text-purple-400 mt-1">O(1) Lookup Index</div>
-                  </div>
-                  <div className="p-2.5 rounded bg-white/5 border border-white/5">
-                    <div className="text-[10px] text-gray-400">RUNTIME INFRA</div>
-                    <div className="text-green-300 font-bold mt-1">Docker Container</div>
-                    <div className="text-[10px] text-green-400 mt-1">Scalable Deployment</div>
-                  </div>
+              {project.pipeline && (
+                <div
+                  className={`grid grid-cols-1 gap-2.5 text-center ${
+                    project.pipeline.length >= 4 ? 'sm:grid-cols-2' : 'sm:grid-cols-3'
+                  }`}
+                >
+                  {project.pipeline.map((step, i) => (
+                    <div key={i} className="p-2.5 rounded bg-white/5 border border-white/5">
+                      <div className="text-[10px] text-gray-400">{step.stage}</div>
+                      <div
+                        className={`font-bold mt-1 ${
+                          ['text-white', 'text-indigo-300', 'text-purple-300', 'text-green-300'][i % 4]
+                        }`}
+                      >
+                        {step.title}
+                      </div>
+                      <div className="text-[10px] text-blue-400 mt-1">{step.note}</div>
+                    </div>
+                  ))}
                 </div>
               )}
             </div>
@@ -181,7 +138,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <span className="w-1.5 h-1.5 rounded-full bg-green-400"></span>
             <span>Core Engineering Project</span>
           </div>
-          <div>Python • AI/ML • Microservices</div>
+          <div>{project.technologies.slice(0, 3).join(' • ')}</div>
         </div>
       </div>
     </div>

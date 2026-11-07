@@ -18,7 +18,7 @@ export function BuildingInPublic() {
               </h2>
 
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                Exploring open-source development, version-controlled software iterations, and continuous learning. All repositories, AI scripts, and modular service implementations are published under the handle <strong className="text-white font-mono">UniversalCodeBin</strong>.
+                My projects are developed in the open, with code, documentation and project write-ups published under the handle <strong className="text-white font-mono">UniversalCodeBin</strong>.
               </p>
 
               <div className="pt-2">
@@ -54,7 +54,7 @@ export function BuildingInPublic() {
                     >
                       <div className="flex items-center gap-2 text-gray-200">
                         <GitBranch className="w-3.5 h-3.5 text-blue-400" />
-                        <span className="font-semibold">{proj.title.toLowerCase().replace(/\s+/g, '-')}</span>
+                        <span className="font-semibold">{(proj.githubUrl ?? proj.title).split('/').pop()}</span>
                       </div>
                       <span className="text-[10px] text-gray-400 bg-white/5 border border-white/5 px-2 py-0.5 rounded">
                         {proj.technologies[0]}
@@ -65,7 +65,7 @@ export function BuildingInPublic() {
 
                 <div className="pt-2 border-t border-white/10 text-[11px] text-gray-500 flex items-center justify-between">
                   <span>Branch: main</span>
-                  <span>License: MIT / Apache-2.0</span>
+                  <span>Owner: UniversalCodeBin</span>
                 </div>
               </div>
             </div>

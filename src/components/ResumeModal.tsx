@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { X, Printer, Download, Loader2, CheckCircle2 } from 'lucide-react';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import { PERSONAL_INFO } from '../data/portfolioData';
+import { PERSONAL_INFO, PROJECTS } from '../data/portfolioData';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -67,7 +67,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             </div>
             <div style="display: flex; justify-content: space-between; align-items: baseline; color: #334155; font-style: italic;">
               <span>Bachelor of Technology in Artificial Intelligence and Data Science</span>
-              <span style="color: #15803d; font-weight: 700; font-style: normal; font-family: monospace;">Expected May 2029 | CGPA: 8.856/10</span>
+              <span style="color: #15803d; font-weight: 700; font-style: normal; font-family: monospace;">Expected May 2029 | CGPA: 8.667/10</span>
             </div>
           </div>
           <div style="font-size: 11px;">
@@ -88,9 +88,9 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             Technical Skills
           </h2>
           <div style="font-size: 11px; color: #334155; line-height: 1.6;">
-            <div><strong style="color: #0f172a;">Languages:</strong> <span style="font-family: monospace; color: #1e293b;">Python, C, C++, Java, JavaScript, HTML, CSS</span></div>
-            <div><strong style="color: #0f172a;">Libraries & Frameworks:</strong> <span style="font-family: monospace; color: #1e293b;">NumPy, Pandas, FastAPI</span></div>
-            <div><strong style="color: #0f172a;">Developer Tools:</strong> <span style="font-family: monospace; color: #1e293b;">Git, GitHub, Docker, Firebase, VS Code</span></div>
+            <div><strong style="color: #0f172a;">Languages:</strong> <span style="font-family: monospace; color: #1e293b;">Python, TypeScript, JavaScript, SQL, C, HTML/CSS</span></div>
+            <div><strong style="color: #0f172a;">AI, ML & Optimization:</strong> <span style="font-family: monospace; color: #1e293b;">scikit-learn, PyTorch, NumPy, Pandas, OR-Tools</span></div>
+            <div><strong style="color: #0f172a;">Backend & Infrastructure:</strong> <span style="font-family: monospace; color: #1e293b;">FastAPI, Model Context Protocol, PostgreSQL, Redis, SQLite, Docker, GitHub Actions, Git, React</span></div>
           </div>
         </div>
 
@@ -99,38 +99,13 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           <h2 style="font-size: 13px; font-weight: 700; color: #1e40af; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; margin: 0 0 8px 0;">
             Projects
           </h2>
-          
+          ${PROJECTS.map((p) => `
           <div style="margin-bottom: 10px;">
             <div style="font-size: 12px; font-weight: 700; color: #0f172a;">
-              AI Personal Assistant <span style="font-size: 10px; font-weight: normal; color: #64748b; font-family: monospace;">| Python, LLMs, Vector Databases, Git</span>
+              ${p.title} <span style="font-size: 10px; font-weight: normal; color: #64748b; font-family: monospace;">| ${p.technologies.join(', ')}</span>
             </div>
-            <ul style="margin: 3px 0 0 0; padding-left: 16px; font-size: 11px; color: #334155;">
-              <li>Developing a modular AI assistant with voice interaction, agent workflows, and task execution capabilities.</li>
-              <li>Implementing semantic search and memory retrieval.</li>
-              <li>Building REST APIs with FastAPI while emphasizing reliability and scalable software design.</li>
-            </ul>
-          </div>
-
-          <div style="margin-bottom: 10px;">
-            <div style="font-size: 12px; font-weight: 700; color: #0f172a;">
-              AI Chatbot System <span style="font-size: 10px; font-weight: normal; color: #64748b; font-family: monospace;">| Python, NLP, Text Processing</span>
-            </div>
-            <ul style="margin: 3px 0 0 0; padding-left: 16px; font-size: 11px; color: #334155;">
-              <li>Built a conversational chatbot capable of answering multi-turn user queries efficiently.</li>
-              <li>Developed text-processing pipelines and custom conversational logic.</li>
-              <li>Performed debugging and optimization to improve response quality and reliability.</li>
-            </ul>
-          </div>
-
-          <div>
-            <div style="font-size: 12px; font-weight: 700; color: #0f172a;">
-              URL Shortener Service <span style="font-size: 10px; font-weight: normal; color: #64748b; font-family: monospace;">| Python, FastAPI, Docker</span>
-            </div>
-            <ul style="margin: 3px 0 0 0; padding-left: 16px; font-size: 11px; color: #334155;">
-              <li>Developing a scalable URL shortening service with efficient data retrieval and storage.</li>
-              <li>Containerizing the application with Docker and building REST APIs using FastAPI.</li>
-            </ul>
-          </div>
+            <div style="margin: 3px 0 0 0; font-size: 11px; color: #334155;">${p.description}</div>
+          </div>`).join('')}
         </div>
 
         <!-- ACHIEVEMENTS & ACTIVITIES -->
@@ -139,18 +114,17 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             Achievements & Certifications
           </h2>
           <ul style="margin: 0; padding-left: 16px; font-size: 11px; color: #334155; line-height: 1.5;">
-            <li><strong style="color: #0f172a;">Google Gemini:</strong> Gemini Certified University Student demonstrating proficiency in prompt engineering and AI tool integration.</li>
-            <li><strong style="color: #0f172a;">Smart India Hackathon 2025:</strong> Participated in a national-scale hackathon, collaborating on engineering solutions under strict time constraints.</li>
-            <li><strong style="color: #0f172a;">Research Publication (SMART'25):</strong> Co-authored and presented the paper <em>"Deep Sea Meets Deep Learning: Natural Language Processing for Identifying Marine Species"</em> at SMART'25 International Conference.</li>
-            <li><strong style="color: #0f172a;">Certifications:</strong> Python 101 for Data Science (IBM), Python for Everybody.</li>
-            <li><strong style="color: #0f172a;">IoT Internship:</strong> Completed Smart Innovations with Internet of Things internship.</li>
+            <li><strong style="color: #0f172a;">2nd Place, RYHATHON 2026:</strong> 36-hour hackathon by Ryha Technologies (team ASTRIX).</li>
+            <li><strong style="color: #0f172a;">Research (SMART'25):</strong> Co-authored and presented <em>"Deep Sea Meets Deep Learning: Natural Language Processing for Identifying Marine Species"</em>.</li>
+            <li><strong style="color: #0f172a;">Hackathons:</strong> Smart India Hackathon 2025, HACKITON'26, Bharatiya Antariksh Hackathon 2026, AI in Healthcare Hackathon 2026, United Hacks V7.</li>
+            <li><strong style="color: #0f172a;">Certifications:</strong> NPTEL The Joy of Computing using Python (84/100); Google Gemini Certified University Student; IBM Python for Data Science; Python for Everybody; Deloitte Data Analytics Job Simulation; Smart Innovations with IoT (internship program).</li>
           </ul>
         </div>
 
         <!-- EXTRACURRICULARS & DETAILS -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 11px; color: #334155; border-top: 1px solid #e2e8f0; pt: 8px;">
           <div>
-            <strong style="color: #0f172a;">Extracurriculars:</strong> National Cadet Corps (NCC) — active former cadet with discipline & leadership.
+            <strong style="color: #0f172a;">Activities:</strong> Volunteer Teacher, Talent Quest for India (Oct 2026); former National Cadet Corps (NCC) cadet.
           </div>
           <div>
             <strong style="color: #0f172a;">Languages:</strong> English, Tamil (Native) | <strong style="color: #0f172a;">Hobbies:</strong> AI Projects, Coding Challenges, Chess.
@@ -293,85 +267,14 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               Education
             </h2>
             <div className="space-y-4 text-xs">
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                <div>
-                  <strong className="text-sm text-white font-bold">Francis Xavier Engineering College</strong>
-                  <div className="text-gray-300 italic">Bachelor of Technology in Artificial Intelligence and Data Science</div>
+              {PROJECTS.map((p) => (
+                <div key={p.id}>
+                  <div className="font-bold text-white text-sm">
+                    {p.title} <span className="text-gray-400 font-normal font-mono text-xs">| {p.technologies.join(', ')}</span>
+                  </div>
+                  <p className="text-gray-300 mt-1 pl-1">{p.description}</p>
                 </div>
-                <div className="text-right sm:text-right font-mono text-gray-400">
-                  <div>Tirunelveli, Tamil Nadu</div>
-                  <div className="text-green-400 font-semibold">Expected May 2029 — CGPA: 8.856/10</div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                <div>
-                  <strong className="text-sm text-white font-bold">SBIOA Matriculation & Higher Secondary School</strong>
-                  <div className="text-gray-300 italic">Higher Secondary Education</div>
-                </div>
-                <div className="text-right sm:text-right font-mono text-gray-400">
-                  <div>Trichy, Tamil Nadu</div>
-                  <div className="text-green-400 font-semibold">March 2025 — Percentage: 81.8</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Technical Skills */}
-          <div className="space-y-2">
-            <h2 className="text-sm font-bold text-blue-400 uppercase tracking-widest border-b border-white/10 pb-1 font-mono">
-              Technical Skills
-            </h2>
-            <div className="text-xs space-y-1.5">
-              <div>
-                <strong className="text-white font-semibold">Languages:</strong> <span className="text-gray-300 font-mono">Python, C, C++, Java, JavaScript, HTML, CSS</span>
-              </div>
-              <div>
-                <strong className="text-white font-semibold">Libraries & Framework:</strong> <span className="text-gray-300 font-mono">NumPy, Pandas, FastAPI.</span>
-              </div>
-              <div>
-                <strong className="text-white font-semibold">Developer Tools:</strong> <span className="text-gray-300 font-mono">Git, GitHub, Docker, Firebase, VS Code</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Projects */}
-          <div className="space-y-3">
-            <h2 className="text-sm font-bold text-blue-400 uppercase tracking-widest border-b border-white/10 pb-1 font-mono">
-              Projects
-            </h2>
-            <div className="space-y-4 text-xs">
-              <div>
-                <div className="font-bold text-white text-sm">
-                  AI Personal Assistant <span className="text-gray-400 font-normal font-mono text-xs">| Python, LLMs, Vector Databases, Git</span>
-                </div>
-                <ul className="list-disc list-inside space-y-1 text-gray-300 mt-1 pl-1">
-                  <li>Developing a modular AI assistant with voice interaction, agent workflows, and task execution capabilities.</li>
-                  <li>Implementing semantic search and memory retrieval.</li>
-                  <li>Building REST APIs with FastAPI while emphasizing reliability and scalable software design.</li>
-                </ul>
-              </div>
-
-              <div>
-                <div className="font-bold text-white text-sm">
-                  AI Chatbot System <span className="text-gray-400 font-normal font-mono text-xs">| Python, NLP, Text Processing</span>
-                </div>
-                <ul className="list-disc list-inside space-y-1 text-gray-300 mt-1 pl-1">
-                  <li>Built a conversational chatbot capable of answering multi-turn user queries efficiently.</li>
-                  <li>Developed text-processing pipelines and custom conversational logic.</li>
-                  <li>Performed debugging and optimization to improve response quality and reliability.</li>
-                </ul>
-              </div>
-
-              <div>
-                <div className="font-bold text-white text-sm">
-                  URL Shortener Service <span className="text-gray-400 font-normal font-mono text-xs">| Python, FastAPI, Docker</span>
-                </div>
-                <ul className="list-disc list-inside space-y-1 text-gray-300 mt-1 pl-1">
-                  <li>Developing a scalable URL shortening service with efficient data retrieval and storage.</li>
-                  <li>Containerizing the application with Docker and building REST APIs using FastAPI.</li>
-                </ul>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -382,19 +285,16 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             </h2>
             <ul className="list-disc list-inside space-y-2 text-xs text-gray-300 pl-1">
               <li>
-                <strong className="text-white">Google Gemini:</strong> Gemini Certified University Student demonstrating proficiency in prompt engineering and AI tool integration.
+                <strong className="text-white">2nd Place, RYHATHON 2026:</strong> 36-hour hackathon by Ryha Technologies (team ASTRIX).
               </li>
               <li>
-                <strong className="text-white">Smart India Hackathon 2025:</strong> Participated in a national-scale hackathon, collaborating on engineering solutions under strict time constraints.
+                <strong className="text-white">Research Publication:</strong> Co-authored and presented <em className="text-purple-300">Deep Sea Meets Deep Learning: Natural Language Processing for Identifying Marine Species</em> at the SMART'25 International Conference.
               </li>
               <li>
-                <strong className="text-white">Research Publication:</strong> Co-authored and presented the paper <em className="text-purple-300">Deep Sea Meets Deep Learning: Natural Language Processing for Identifying Marine Species</em> at SMART'25 International Conference using BERT, Word2Vec, and machine learning techniques.
+                <strong className="text-white">Hackathons:</strong> Smart India Hackathon 2025, HACKITON'26, Bharatiya Antariksh Hackathon 2026, AI in Healthcare Hackathon 2026, United Hacks V7.
               </li>
               <li>
-                <strong className="text-white">Technical Certifications:</strong> Completed Python 101 for Data Science (IBM) and Python for Everybody.
-              </li>
-              <li>
-                <strong className="text-white">IoT Internship:</strong> Completed Smart Innovations with Internet of Things internship.
+                <strong className="text-white">Certifications:</strong> NPTEL The Joy of Computing using Python (84/100); Google Gemini Certified University Student; IBM Python for Data Science; Python for Everybody; Deloitte Data Analytics Job Simulation; Smart Innovations with IoT (internship program).
               </li>
             </ul>
           </div>
@@ -405,7 +305,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               Extracurricular Activities
             </h2>
             <p className="text-xs text-gray-300 pl-1">
-              • <strong className="text-white">National Cadet Corps (NCC):</strong> Former active NCC member; developed discipline, teamwork and leadership skills.
+              • <strong className="text-white">National Cadet Corps (NCC):</strong> Former NCC cadet. Volunteer Teacher with Talent Quest for India (Oct 2026).
             </p>
           </div>
 

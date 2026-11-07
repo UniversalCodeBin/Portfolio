@@ -17,7 +17,7 @@ export function Research() {
             Research & Publications
           </h2>
           <p className="text-gray-400 text-base max-w-2xl mt-2">
-            Peer-reviewed and presented academic paper applying state-of-the-art Natural Language Processing transformers and semantic vector models to biological species identification.
+            Co-authored research applying natural language processing to marine species identification, presented at the SMART’25 International Conference.
           </p>
         </div>
 

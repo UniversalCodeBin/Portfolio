@@ -14,7 +14,7 @@ export function About() {
             About Me
           </h2>
           <p className="text-gray-400 text-base max-w-2xl mt-2">
-            Focused on the intersection of modern machine learning, software engineering reliability, and algorithmic problem-solving.
+            What I build, the problems I care about, and where I’m heading.
           </p>
         </div>
 
@@ -27,10 +27,10 @@ export function About() {
                 <span>B.Tech in Artificial Intelligence & Data Science</span>
               </h3>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                I am an Artificial Intelligence and Data Science undergraduate at <strong className="text-white font-medium">Francis Xavier Engineering College</strong> (Tirunelveli, Tamil Nadu). My focus is on understanding the core principles of artificial intelligence, machine learning architectures, and modern software engineering.
+                I am an Artificial Intelligence and Data Science undergraduate at <strong className="text-white font-medium">Francis Xavier Engineering College</strong> (Tirunelveli, Tamil Nadu). I build AI systems that turn predictions into decisions people can trust: machine learning models, optimization under real constraints, and backend services designed with guardrails and an audit trail.
               </p>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                Rather than treating AI as a black box, I am passionate about building practical, end-to-end AI systems with clear architecture, dependable REST APIs, efficient vector database indexing, and containerized deployments.
+                My projects range from a payment-recovery system that allocates limited resources across a whole portfolio, to an agent tool server that keeps an AI assistant within safe limits, to a team-built voice-spoofing detector. Long term, I want to build meaningful technology products and a company around trustworthy AI automation.
               </p>
             </div>
 
@@ -42,7 +42,7 @@ export function About() {
                 </div>
                 <h4 className="font-bold text-white text-sm mb-1.5">Practical Software Engineering</h4>
                 <p className="text-xs text-gray-400 leading-normal">
-                  Designing scalable REST APIs using FastAPI, containerizing workloads with Docker, and writing clean, maintainable code across 7 core programming languages.
+                  Building complete systems in Python — FastAPI services, PostgreSQL and Redis, React dashboards and Docker — with automated testing and continuous integration.
                 </p>
               </div>
 
@@ -52,7 +52,7 @@ export function About() {
                 </div>
                 <h4 className="font-bold text-white text-sm mb-1.5">Applied AI & NLP Research</h4>
                 <p className="text-xs text-gray-400 leading-normal">
-                  Active exploration into NLP classification models, BERT transformer embeddings, and Word2Vec semantics, co-authoring research presented at the SMART'25 conference.
+                  Machine learning, optimization and agent tooling in practice, plus co-authored NLP research (BERT, Word2Vec) presented at the SMART'25 International Conference.
                 </p>
               </div>
             </div>
@@ -81,7 +81,7 @@ export function About() {
 
                 <div className="p-3.5 rounded-lg bg-white/5 border border-white/5">
                   <span className="text-[10px] font-mono text-gray-500 uppercase block mb-1">ACADEMIC STANDING</span>
-                  <div className="text-xl font-bold text-green-400 tracking-tight font-mono">8.856 <span className="text-xs text-gray-400 font-normal">/ 10</span></div>
+                  <div className="text-xl font-bold text-green-400 tracking-tight font-mono">8.667 <span className="text-xs text-gray-400 font-normal">/ 10</span></div>
                   <p className="text-[11px] text-gray-400 mt-1 leading-tight">Current CGPA Score</p>
                 </div>
 
@@ -93,8 +93,8 @@ export function About() {
 
                 <div className="p-3.5 rounded-lg bg-white/5 border border-white/5">
                   <span className="text-[10px] font-mono text-gray-500 uppercase block mb-1">PROGRAMMING</span>
-                  <div className="text-xl font-bold text-indigo-300 tracking-tight">7 <span className="text-xs text-gray-400 font-normal">Languages</span></div>
-                  <p className="text-[11px] text-gray-400 mt-1 leading-tight">Python, C, C++, Java, JS, HTML, CSS</p>
+                  <div className="text-xl font-bold text-indigo-300 tracking-tight">Python <span className="text-xs text-gray-400 font-normal">first</span></div>
+                  <p className="text-[11px] text-gray-400 mt-1 leading-tight">Python, TypeScript, JavaScript, SQL, C</p>
                 </div>
               </div>
 

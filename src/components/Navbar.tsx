@@ -73,7 +73,7 @@ export function Navbar({ onOpenResume }: NavbarProps) {
               {PERSONAL_INFO.name}
             </span>
             <span className="text-[10px] uppercase font-semibold tracking-wider text-blue-400 -mt-0.5">
-              AI Engineer & Researcher
+              Applied AI & Backend
             </span>
           </div>
         </a>
