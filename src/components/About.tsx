@@ -81,7 +81,7 @@ export function About() {
 
                 <div className="p-3.5 rounded-lg bg-white/5 border border-white/5">
                   <span className="text-[10px] font-mono text-gray-500 uppercase block mb-1">ACADEMIC STANDING</span>
-                  <div className="text-xl font-bold text-green-400 tracking-tight font-mono">8.667 <span className="text-xs text-gray-400 font-normal">/ 10</span></div>
+                  <div className="text-xl font-bold text-green-400 tracking-tight font-mono">8.856 <span className="text-xs text-gray-400 font-normal">/ 10</span></div>
                   <p className="text-[11px] text-gray-400 mt-1 leading-tight">Current CGPA Score</p>
                 </div>
 

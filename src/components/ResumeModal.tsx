@@ -67,7 +67,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             </div>
             <div style="display: flex; justify-content: space-between; align-items: baseline; color: #334155; font-style: italic;">
               <span>Bachelor of Technology in Artificial Intelligence and Data Science</span>
-              <span style="color: #15803d; font-weight: 700; font-style: normal; font-family: monospace;">Expected May 2029 | CGPA: 8.667/10</span>
+              <span style="color: #15803d; font-weight: 700; font-style: normal; font-family: monospace;">Expected May 2029 | CGPA: 8.856/10</span>
             </div>
           </div>
           <div style="font-size: 11px;">

@@ -176,7 +176,7 @@ export function Hero({ onOpenResume }: HeroProps) {
                   CGPA
                 </span>
                 <span className="text-xl sm:text-2xl font-bold text-white font-mono tracking-tight">
-                  8.667
+                  8.856
                 </span>
               </div>
               <div className="pl-4 sm:pl-6 pr-2">
