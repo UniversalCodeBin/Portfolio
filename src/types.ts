@@ -6,6 +6,7 @@ export interface Project {
   description: string;
   highlights: string[];
   architectureType: 'assistant' | 'chatbot' | 'url_shortener';
+  pipeline?: { stage: string; title: string; note: string }[];
   githubUrl?: string;
 }
 
