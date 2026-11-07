@@ -13,7 +13,7 @@ export const PERSONAL_INFO = {
   status: 'Open to AI/ML & backend internships',
   stats: [
     { label: 'Degree', value: 'B.Tech AI & DS', detail: 'Artificial Intelligence & Data Science' },
-    { label: 'Academic Standing', value: '8.667 / 10', detail: 'Cumulative Grade Point Average (CGPA)' },
+    { label: 'Academic Standing', value: '8.856 / 10', detail: 'Cumulative Grade Point Average (CGPA)' },
     { label: 'Expected Graduation', value: 'May 2029', detail: 'Francis Xavier Engineering College' },
     { label: 'Core Languages', value: 'Python first', detail: 'Python, TypeScript, JavaScript, SQL, C' },
   ],
@@ -224,7 +224,7 @@ export const EDUCATION_DATA: EducationItem[] = [
     location: 'Tirunelveli, Tamil Nadu',
     timeline: 'Aug 2025 – May 2029 (Expected)',
     scoreLabel: 'CGPA',
-    scoreValue: '8.667 / 10',
+    scoreValue: '8.856 / 10',
     highlights: [
       'Coursework: Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Machine Learning, Operating Systems, Computer Networks',
       'Co-authored NLP research presented at the SMART’25 International Conference',
